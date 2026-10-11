@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Comic Sans MS';
+      background-color: #fefefe;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .portada {
+      width: 400px;
+      height: 600px;
+      background: repeating-linear-gradient(
+        0deg,
+        #d4ecff,
+        #d4ecff 30px,
+        #ffffff 30px,
+        #ffffff 60px
+      );
+      border: 10px solid #ffccdd;
+      border-left: 60px solid #ffccdd;
+      border-radius: 20px;
+      position: relative;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      cursor: pointer;
+    }
+    .titulo {
+      font-size: 2.5em;
+      color: #ff80aa;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 4px;
+      margin-top: 10px;
+    }
+    .titulo span {
+      display: inline-block;
+      background-color: #ffe4f0;
+      border-radius: 10px;
+      padding: 5px 10px;
+      margin: 0 3px;
+      transform: rotate(-5deg);
+    }
+    .imagen {
+      width: 100px;
+      margin: 15px auto;
+      display: block;
+    }
+    .etiqueta {
+      width: 80%;
+      height: 50px;
+      margin: 20px auto;
+      border: 2px solid pink;
+      border-radius: 10px;
+      background-color: white;
+      line-height: 50px;
+      font-size: 1.1em;
+      color: #ff66aa;
+      text-align: center;
+    }
+    .decoracion {
+      position: absolute;
+      font-size: 2em;
+    }
+    .corazon {
+      color: #ff99cc;
+    }
+    .estrella {
+      color: #aeefff;
+    }
+    .inferior {
+      position: absolute;
+      bottom: 20px;
+      right: 30px;
+      font-size: 0.9em;
+      color: #f199c9;
+    }
+    #paginaInterior {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #ffffff;
+      z-index: 10;
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+    .cuaderno-abierto {
+      display: flex;
+      width: 800px;
+      height: 600px;
+      box-shadow: 0px 20px 30px rgba(0,0,0,0.2);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .hoja {
+      width: 400px;
+      height: 600px;
+      background: repeating-linear-gradient(
+        to bottom,
+        #fff,
+        #fff 25px,
+        #ffc0cb4d 25px,
+        #ffc0cb4d 26px
+      );
+      border-left: 8px solid #ffb6d9;
+      border-right: 8px solid #ffb6d9;
+      padding: 30px;
+      font-size: 1em;
+      color: #555;
+      overflow-y: auto;
+    }
+    .hoja h2 {
+      color: #ff69b4;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .cerrar {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      background-color: white;
+      color: #ff69b4;
+      border: 2px solid pink;
+      border-radius: 10px;
+      padding: 8px 16px;
+      font-size: 1em;
+      cursor: pointer;
+      z-index: 20;
+    }
+    @media (max-width: 850px) {
+      .cuaderno-abierto {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+      }
+      .hoja {
+        width: 100%;
+        height: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="portada" id="portada" onclick="abrirCuaderno()">
+    <div class="titulo">
+      <span>N</span><span>O</span><span>T</span><span>E</span> BOOK
+    </div>
+    <img class="imagen" src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG20.png" alt="Peluche Kawaii">
+    <div class="etiqueta">DEDICADO A LLUVIA AYSHLETH</div>
+    <img class="imagen" src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG43.png" alt="Sundae Kawaii">
+    <div class="decoracion corazon" style="top: 20px; left: 80px;">❤</div>
+    <div class="decoracion estrella" style="top: 50px; right: 50px;">★</div>
+    <div class="decoracion estrella" style="bottom: 80px; left: 40px;">★</div>
+    <div class="decoracion corazon" style="bottom: 60px; right: 80px;">❤</div>
+    <div class="inferior">hecho por isidro</div>
+  </div>
+  <div id="paginaInterior">
+    <button class="cerrar" onclick="cerrarCuaderno()">✿ Cerrar</button>
+  <div class="cuaderno-abierto">
+  <div class="hoja">
+    <h2>✧ Lo que siento...✧</h2>
+    <p> okey amor ya se que te escribi dos cartas pero quiero seguir escribiendo JAJAJA te amo mucho mi amor eres la niña mas preciosa que existe siento que ya no tengo palabras para decirte lo demasiado grandiosa que eres asi que ahora te hago asi una carta mas pro que hice pati porque aqui si soy super super pro ok te amo muchisimo mi niña nos acabamos de peliar amor pero te estoy escribiendo aqui todo lo que siento por ti y el inmenso miedo que me da perderte, no se la verdad que sería de mi sin ti pero lo que se es que nada de mi es de mi si no fuera por ti porque te amo tanto que no puedo ver a nadie mas con los ojos que te veo a ti porque realmente tienes absolutamente todo lo que he pedido y tienes un poco bastante de lo que no sabia que queria pero termine amando, enserio muchisimas gracias por todo mi bebesita, esta carta la quise hacer asi porque hablare de temas que no quiero que queden en una hoja que accidentalmente puedan leer tus padres ok.... </p>
+    <img src="https://acortar.link/2GI7pa" 
+          style="width: 70px; border: 4px solid #aeefff; border-radius: 15px; margin: 15px 10px;">
+    <img src="https://acortar.link/pE1n8x" 
+         style="width: 70px; border: 4px solid #aeefff; border-radius: 15px; margin: 15px 10px;">
+    <img src="https://acortar.link/SisbOM" 
+         style="width: 60px; border: 4px solid #ffd6ec; border-radius: 50%; margin: 15px 10px;">
+    <h2>TE ADORO MÁS DE LO QUE TE IMAGINAS</h2> 
+  </div>
+  <div class="hoja"> 
+    <h2>✧¡VIEJA RIKA!✧</h2> 
+    <p>Amor esta carta es para decirte las cosas mas que nada que son buenas pero malas okey, asi como lo que quiero hacer contigo toda la vida... detonar dia tarde y noche se me hace super lindo porque real es algo que quiero hacer pero es algo que no veo con morbo, osea real quiero que me hagas de todo, nada de ti me da asco... podria tomar desde el agua que sale de ti que me escupas, que me manches de sangre, todo absolutamente todo lo que tenga que ver contigo me mata okey, quisiera poder sentir toda tu piel y darte besitos en todo el cuerpo pero quiero hacerlo todo con amor, real tu cuerpo me parece tan grandioso, no quiero sonar cochino pero tienes la cola donde quiero poner mi pilin toda la vida y tienes las titis mas perfectas para poner mi mano y la cintura perfecta para ir de la pierta a la titi y de la titi a la pucha y de la pucha a darte besitos y luego terminar y que me abraces y descansemos muy a gusto real me da mucha envidia cuando dices ñiñi estoy bichi y es como aghhh quiero veeeer y real mi pilin se pone muy feliz de verte y quiero que sea el unico amigo que tengas toda tu vida y le puedes da todos los besitos que quieras y no me pondre celoso ok???</p>
+    <img src="foto1.jpeg" 
+         style="width: 70px; border: 4px solid #ffe4f0; border-radius: 15px; margin: 15px 10px;">
+    <img src="foto2.jpeg" 
+         style="width: 65px; border: 4px solid #ffccdd; border-radius: 15px; margin: 15px 10px;">
+    <img src="foto3.jpeg" 
+         style="width: 65px; border: 4px solid #b8e0ff; border-radius: 15px; margin: 15px 10px;">
+    <p>
+<p> Te amo mucho amor mío. </p>
+<p> Con cariño,</p>
+<p> tu bebé hermoso: isidro</p>
+  </div>
+</div>
+  <script>
+    function abrirCuaderno() {
+      document.getElementById('portada').style.display = 'none';
+      document.getElementById('paginaInterior').style.display = 'flex';
+    }
+    function cerrarCuaderno() {
+      document.getElementById('paginaInterior').style.display = 'none';
+      document.getElementById('portada').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
